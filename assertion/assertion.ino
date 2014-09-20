@@ -16,16 +16,15 @@ void loop() {
 }
 
 void __assert(const char *__function, const char *__file, int __line, const char *__assertion) {
-// transmit diagnostic informations through serial link.
-Serial.print("Fail: ");
-Serial.print(__assertion);
-Serial.print(": ");
-Serial.print(__file);
-Serial.print(":");
-Serial.print(__line, DEC);
-Serial.print(" in function ");
-Serial.println(__function);
-Serial.flush();
-// abort program execution.
-abort();
+  Serial.print("Fail: ");
+  Serial.print(__assertion);
+  Serial.print(": ");
+  Serial.print(__file);
+  Serial.print(":");
+  Serial.print(__line, DEC);
+  Serial.print(" in function ");
+  Serial.println(__function);
+  Serial.flush();
+
+  abort();
 }
